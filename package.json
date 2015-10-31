@@ -1,0 +1,31 @@
+{
+  "name": "protractor101",
+  "version": "0.0.1",
+  "description": "",
+  "sharedKarmaFiles": {
+    "editorconfig": ".editorconfig",
+    "gitattributes": ".gitattributes"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "cucumberjs"
+  ],
+  "author": "Joris Wijlens",
+  "dependencies": {
+    "angular": "^1.4.7"
+  },
+  "devDependencies": {
+    "path": "^0.12.7",
+    "cucumber": "latest",
+    "eslint": "^0.22.1",
+    "eslint-config-standard": "^2.0.1",
+    "gulp-util": "^3.0.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}

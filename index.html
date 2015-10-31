@@ -1,0 +1,11 @@
+<html>
+<head>
+    <script src="bundle.js"></script>
+</head>
+<body>
+<div ng-controller="HomeCtrl as home">
+    <input ng-model="home.user.name">
+    <h1>{{ home.greeting() }}</h1>
+</div>
+</body>
+</html>
