@@ -17,14 +17,18 @@
   ],
   "author": "Joris Wijlens",
   "dependencies": {
-    "angular": "^1.4.7"
+    "angular": "^1.4.7",
+    "angular-resource": "^1.4.7",
+    "bootstrap": "^3.3.5"
   },
   "devDependencies": {
-    "path": "^0.12.7",
+    "httpbackend": "^2.0.0",
     "cucumber": "latest",
     "eslint": "^0.22.1",
     "eslint-config-standard": "^2.0.1",
     "gulp-util": "^3.0.6",
+    "path": "^0.12.7",
+    "protractor-cucumber": "^0.1.7",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   }

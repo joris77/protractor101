@@ -2,7 +2,7 @@ describe('home page', function() {
     it('should show message', function() {
         browser.get('http://localhost:8080/index.html');
 
-        var inputElement = element(by.model('home.user.name'));
+        var inputElement = element(by.model('tra.user.name'));
         inputElement.clear();
         inputElement.sendKeys('joris');
 
