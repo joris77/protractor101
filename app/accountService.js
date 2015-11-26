@@ -2,20 +2,20 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('main')
         .factory('AccountService', AccountService);
 
     AccountService.$inject = ['$resource'];
 
     function AccountService($resource) {
-        var Account = $resource('/account');
+        var Account = $resource('/accounts');
 
         return {
             findAll: findAll
         }
 
         function findAll(){
-            return Account.get().$promise;
+            return Account.query().$promise;
         }
 
     }

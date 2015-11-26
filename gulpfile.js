@@ -22,14 +22,15 @@ gulp.task("build-dev", function() {
 
 gulp.task("webpack-dev-server", function(callback) {
     // modify some webpack config options
-    var myConfig = Object.create(webpackConfig);
-    myConfig.devtool = "eval";
-    myConfig.debug = true;
-    myConfig.entry.app.unshift("webpack-dev-server/client?http://localhost:8080", "webpack/hot/dev-server");
+    var devConfig = Object.create(webpackConfig);
+    devConfig.devtool = "eval";
+    devConfig.debug = true;
+    devConfig.entry.app = ['./app/bootstrapDev.js'];
+    devConfig.entry.app.unshift("webpack-dev-server/client?http://localhost:8080", "webpack/hot/dev-server");
 
     // Start a webpack-dev-server
-    new WebpackDevServer(webpack(myConfig), {
-        publicPath: "/" + myConfig.output.publicPath,
+    new WebpackDevServer(webpack(devConfig), {
+        publicPath: "/" + devConfig.output.publicPath,
         stats: {
             colors: true
         },

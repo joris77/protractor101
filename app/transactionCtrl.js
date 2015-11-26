@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('main')
         .controller('TransactionCtrl', TransactionCtrl);
 
     TransactionCtrl.$inject = ['AccountService'];

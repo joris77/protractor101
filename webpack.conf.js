@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require("webpack");
 module.exports = {
     entry: {
-        app: ['./app/main.js'],
+        app: ['./app/bootstrap.js'],
         vendors: ['angular','angular-resource']
     },
     output: {

@@ -4,9 +4,10 @@
     <script src="bundle.js"></script>
 </head>
 <body>
-<div ng-controller="TransactionCtrl as home">
+<div ng-controller="TransactionCtrl as vm">
     <form>
-        <select ng-model="home.transaction.account"></select>
+        <select ng-model="home.transaction.account"
+                ng-options="account as account.name for account in vm.accounts track by account.id"></select>
         <input ng-model="home.transaction.amount">
         <input type="date" ng-model="home.transaction.date">
     </form>
