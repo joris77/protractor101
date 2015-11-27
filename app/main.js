@@ -1,3 +1,6 @@
+require('bootstrap-webpack!./bootstrap.config.js');
+var $ = require('jquery');
+
 require('angular');
 require('angular-resource');
 

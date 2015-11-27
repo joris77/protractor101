@@ -10,7 +10,7 @@
     function TransactionCtrl(accountService) {
         var vm = this;
         vm.accounts = [];
-        vm.transaction = {};
+        vm.transaction = { amount: 100};
 
         vm.save = save;
 
