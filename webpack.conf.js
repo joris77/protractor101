@@ -1,19 +1,24 @@
 var path = require('path');
 var webpack = require("webpack");
 module.exports = {
+    context: __dirname,
     entry: {
         app: ['./app/bootstrap.js'],
         vendors: ['angular','angular-resource','bootstrap', 'bootstrap-webpack']
     },
     output: {
-        path: path.resolve(__dirname, "build"),
-        publicPath: "/build/",
-        filename: "bundle.js"
+        path: path.resolve(__dirname, "assets"),
+        publicPath: "/assets/",
+        filename: "bundle.js",
+        chunkFilename: "[hash]/js/[id].js",
+        hotUpdateMainFilename: "[hash]/update.json",
+        hotUpdateChunkFilename: "[hash]/js/[id].update.js"
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
     ],
+    recordsOutputPath: path.join(__dirname, "records.json"),
     module: {
         loaders: [
             // **IMPORTANT** This is needed so that each bootstrap js file required by
@@ -29,3 +34,4 @@ module.exports = {
         ]
     }
 };
+

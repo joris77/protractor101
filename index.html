@@ -1,7 +1,7 @@
 <html>
 <head>
-    <script src="vendors.js"></script>
-    <script src="bundle.js"></script>
+    <script src="assets/vendors.js"></script>
+    <script src="assets/bundle.js"></script>
 </head>
 <body>
 <div ng-controller="TransactionCtrl as vm">
@@ -19,7 +19,7 @@
             <label>Value date</label>
             <input type="date" ng-model="vm.transaction.date">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" ng-click="vm.save()">Submit</button>
     </form>
 </div>
 </body>

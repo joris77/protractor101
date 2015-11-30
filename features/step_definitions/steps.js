@@ -1,28 +1,36 @@
-var pc = require('protractor-cucumber');
+var w = require('../support/world');
+var chai = require('chai');
+var chaiAsPromised = require('chai-as-promised');
+chai.use(chaiAsPromised);
+
+var expect = chai.expect;
+
 var steps = function () {
-    var seleniumAddress = 'http://localhost:4444/wd/hub';
-    var options = { browser : 'chrome', timeout : 100000 };
-    this.World = pc.world(seleniumAddress, options);
+    this.World = w.World();
 
-    this.Before(function(scenario, callback){
-        //pc.addMockModule('httpBackEndMock', backEndMocks.build([backEndMocks.w7Restaurants]));
-        callback();
-    });
-
-    this.After(function(callback) {
-        this.quit(callback);
-    });
-
-    this.Given(/^an account with name "([^"]*)"$/, function (arg1, callback) {
-
-
+    this.Before(function (scenario, callback) {
         callback();
     });
 
     this.When(/^I open the transaction page$/, function (callback) {
-        this.browser.get('http://127.0.0.1:8080/index.html').then(function(result) {
-            callback(result)
+        browser.get('http://127.0.0.1:8080/index.html').then(function(){
+            callback();
+        })
+    });
+
+    this.When(/^select "([^"]*)"$/, function (arg1, callback) {
+        element(by.model('vm.transaction.account')).$('[label="' + arg1 + '"]').click()
+            .then(function(){
+            callback();
         });
     });
+
+    this.When(/^insert amount "([^"]*)"$/, function (arg1, callback) {
+        element(by.model('vm.transaction.amount')).sendKeys(arg1).then(function(){
+            callback();
+        });
+
+    });
+
 };
 module.exports = steps;

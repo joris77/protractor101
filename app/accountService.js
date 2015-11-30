@@ -17,6 +17,5 @@
         function findAll(){
             return Account.query().$promise;
         }
-
     }
 })();
